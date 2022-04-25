@@ -1,0 +1,21 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Burası Hakkında sayfası</h1>
+            <p>Paragraf</p>
+            <p>Bu template'den geliyor: {{index .StringMap "test"}} </p>
+
+            <p>
+                {{if ne (index .StringMap "remote_Ip") "" }}
+                    Remote Ip adresi şöyle {{index .StringMap "remote_Ip"}}
+                {{else}}
+                    Remote Ip bilinmiyor <a href="/">Ana Sayfa</a> 'ya girince ip gelcektir.
+                {{end}}
+            </p>
+        </div>
+    </div>
+</div>
+{{end}}
